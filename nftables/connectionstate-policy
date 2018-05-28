@@ -1,0 +1,11 @@
+table filter {
+    chain input {
+	    ct state established,related accept
+		ct state invalid log prefix "坏输入" limit rate 3/second drop
+	}
+	
+	chain output {
+	    ct state established,related accept
+		ct state invalid log prefix "坏输出" limit rate 3/second drop
+	}
+}

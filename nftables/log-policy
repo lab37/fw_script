@@ -1,0 +1,11 @@
+include "nft-vars"
+
+table filter {
+    chain input {
+	   log prefix "输入包被丢弃：" limit rate 3/second
+	}
+	
+	chain output {
+	log prefix "输出包被丢弃：" limit rate 3/second
+	}
+}

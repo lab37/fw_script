@@ -1,0 +1,11 @@
+include "nft-vars"
+#新建空表
+table filter {
+    chain input {
+	   type filter hook input priority 0;
+	}
+	
+	chain output {
+	type filter hook output priority 0;
+	}
+}

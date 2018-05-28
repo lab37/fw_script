@@ -1,0 +1,11 @@
+include "nft-vars"
+
+table filter {
+    chain input {
+	   iifname $int_loopback accept
+	}
+	
+	chain output {
+	oifname $int_loopback accept
+	}
+}
